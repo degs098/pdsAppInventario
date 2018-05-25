@@ -36,4 +36,37 @@ public class DaoImplProducto implements IDaoProducto{
 		return producto;		
 	}
 
+	@Override
+	public String saveProducto(Producto producto) {
+		List<Producto> lista = DataProducto.getProductos();
+		try {
+			lista.add(producto);
+			DataProducto.setProductos(lista);
+			return "Producto agregado";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error al agregar el producto";
+		}		
+	}
+	
+	@Override
+	public String updateProducto(Producto producto) {
+		List<Producto> lista = DataProducto.getProductos();
+		Producto productExist = getProductoById(producto.getCodigo());
+		if(productExist != null) {
+			try {
+				Integer index = lista.indexOf(productExist);
+				lista.set(index, producto);
+				DataProducto.setProductos(lista);
+				return "Producto actualizado";
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "Error al actualizar el producto";
+			}				
+		}else {
+			return "No existe el producto";
+		}
+		
+	}
+
 }

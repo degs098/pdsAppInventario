@@ -10,4 +10,7 @@ import co.com.poli.AppInventario.Model.Producto;
 public interface IBusinessProducto {
 	public List<Producto> getProductos();
 	public Producto getProductoById(String id);
+	public String saveProducto(Producto producto);
+	public String updateProducto(Producto producto);
+	public String inventarioProducto();
 }

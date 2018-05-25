@@ -5,6 +5,7 @@ public class Producto {
 	private String codigo;
 	private String nombre;
 	private Double existencia;
+	private Double stock;
 	
 	public Producto() {
 
@@ -34,5 +35,14 @@ public class Producto {
 	public void setExistencia(Double existencia) {
 		this.existencia = existencia;
 	}
+
+	public Double getStock() {
+		return stock;
+	}
+
+	public void setStock(Double stock) {
+		this.stock = stock;
+	}
+	
 	
 }

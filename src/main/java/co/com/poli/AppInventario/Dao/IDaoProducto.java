@@ -11,5 +11,7 @@ public interface IDaoProducto {
 	
 	public List<Producto> getProductos();
 	public Producto getProductoById(String id);
+	public String saveProducto(Producto producto);
+	public String updateProducto(Producto producto);	
 
 }

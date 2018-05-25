@@ -7,7 +7,7 @@ import co.com.poli.AppInventario.Model.Producto;
 
 public class DataProducto {
 
-private static List<Producto> list;
+	private static List<Producto> list;
 	
 	static {
 		list = new ArrayList<Producto>() {
