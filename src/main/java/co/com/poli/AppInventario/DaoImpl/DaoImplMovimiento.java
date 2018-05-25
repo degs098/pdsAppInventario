@@ -11,7 +11,7 @@ import co.com.poli.AppInventario.Model.Movimiento;
 
 @Repository
 public class DaoImplMovimiento implements IDaoMovimiento{
-	
+		
 	@Override
 	public List<Movimiento> getMovimientos() {		
 		List<Movimiento> lista = new ArrayList<Movimiento>();
@@ -70,8 +70,13 @@ public class DaoImplMovimiento implements IDaoMovimiento{
 
 	@Override
 	public String deleteMovimiento(String id) {
+		List<Movimiento> movimientos = getMovimientos();
+		Movimiento movimientoExist = getMovimientoById(id);
 		try {
-			
+			if(movimientoExist != null) {
+				Integer index = movimientos.indexOf(movimientoExist);
+				movimientos.remove(index);
+			}
 			return "Movimiento eliminado";
 		} catch (Exception e) {
 			e.printStackTrace();

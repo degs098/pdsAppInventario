@@ -13,5 +13,6 @@ public interface IDaoMovimiento {
 	public Movimiento getMovimientoById(String id);
 	public String saveMovimiento(Movimiento movimiento);
 	public String updateMovimiento(Movimiento movimiento);
+	public String deleteMovimiento(String id);
 
 }
